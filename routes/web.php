@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Bookcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/once_caldas', function () {
     return view('welcome');
 });
+
+Route::get('/books',[Bookcontroller::class,'index'])->name('books.index');
+Route::post('/books',[Bookcontroller::class,'store'])->name('books.store');
     
